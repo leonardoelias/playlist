@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.counter-list {
+  counter-reset: section; 
+  list-style-type: none;
+}
+
+.counter-list li::before {
+  counter-increment: section;
+  content: counters(section,".") " ";
+  @apply text-blue-900 mr-8 font-semibold;
+}

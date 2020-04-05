@@ -1,0 +1,52 @@
+{
+  "name": "meuponto",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "framer-motion": "^1.10.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "build:css": "postcss src/styles/tw.css -o src/index.css",
+    "watch:css": "postcss src/styles/tw.css -o src/index.css -w",
+    "start": "concurrently \"npm run watch:css\" \"react-scripts start\"",
+    "build": "npm run build:css && react-scripts build",
+    "pretest": "npm run lint",
+    "test": "react-scripts test",
+    "posttest": "npm run format",
+    "lint": "eslint . --cache --fix",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "postcss-cli": "^7.1.0",
+    "prettier": "^2.0.2",
+    "tailwindcss": "^1.2.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
